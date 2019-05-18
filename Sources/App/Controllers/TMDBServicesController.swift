@@ -20,10 +20,7 @@ final class TMDBSrvicesController {
             return try apiResponse.content.decode(Movies.self)
         }
         
-        return answer.flatMap { model in
-            let nowPlaying = Movies(results: model.results)
-            return Future.map(on: req) {return nowPlaying}
-        }
+        return answer
     }
 }
 
