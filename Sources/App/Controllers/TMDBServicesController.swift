@@ -21,8 +21,8 @@ final class TMDBSrvicesController {
         }
         
         return answer.flatMap { model in
-            let all = Movies(results: model.results)
-            return Future.map(on: req) {return all}
+            let nowPlaying = Movies(results: model.results)
+            return Future.map(on: req) {return nowPlaying}
         }
     }
 }
